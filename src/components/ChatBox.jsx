@@ -16,16 +16,17 @@ const ChatBox = () => {
       const res = await axios.post(
         'https://openrouter.ai/api/v1/chat/completions',
         {
-          model: 'mistralai/mistral-7b-instruct',
+          model: 'openai/gpt-3.5-turbo',
           messages: [{ role: 'user', content: input }],
         },
         {
           headers: {
-            Authorization: 'Bearer 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',
+            Authorization: 'Bearer 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',
             'Content-Type': 'application/json',
           },
         }
       );
+      
 
       const reply = res.data.choices[0].message.content;
       const botReply = { sender: 'bot', content: reply };
