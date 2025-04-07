@@ -21,7 +21,7 @@ const ChatBox = () => {
         },
         {
           headers: {
-            Authorization: 'Bearer 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',
+            Authorization: 'Bearer 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',
             'Content-Type': 'application/json',
           },
         }
