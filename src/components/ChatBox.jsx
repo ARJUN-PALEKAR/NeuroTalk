@@ -26,7 +26,6 @@ const ChatBox = () => {
           },
         }
       );
-      
 
       const reply = res.data.choices[0].message.content;
       const botReply = { sender: 'bot', content: reply };
@@ -45,13 +44,19 @@ const ChatBox = () => {
   return (
     <div className="chat-container">
       <div className="chat-box">
-        {chat.map((msg, index) => (
-          <div key={index} className={`message ${msg.sender}`}>
-            <strong>{msg.sender === 'user' ? 'You' : 'Bot'}:</strong>
-            <div className="message-content">{msg.content}</div>
-          </div>
-        ))}
+  {chat.length === 0 ? (
+    <div className="placeholder-text">How may I help you?</div>
+  ) : (
+    chat.map((msg, index) => (
+      <div key={index} className={`message ${msg.sender}`}>
+        <strong>{msg.sender === 'user' ? 'You' : 'Bot'}:</strong>
+        <div className="message-content">{msg.content}</div>
       </div>
+    ))
+  )}
+</div>
+
+
       <div className="input-area">
         <input
           type="text"
@@ -66,8 +71,5 @@ const ChatBox = () => {
   );
 };
 
-{messages.length === 0 && (
-  <div className="placeholder-text">How may I help you?</div>
-)}
-
 export default ChatBox;
+
