@@ -72,20 +72,18 @@
 .input-area button:hover {
   background: black;
 }
-.placeholder-text {
-  font-family: 'Poppins', sans-serif;
-  font-weight: 300;
-  font-size: 1.3rem;
-  color: #aaa;
-  line-height: 1.8;
-  opacity: 0.7;
-  text-align: center;
 
-  
+.placeholder-text {
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen,
+    Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+  font-weight: 600;
+  font-size: 2rem;
+  color: #888;
+  text-align: center;
+  opacity: 0.85;
+
   display: flex;
   justify-content: center;
   align-items: center;
-  height: 100%;
+  height: 60%;
 }
-
-

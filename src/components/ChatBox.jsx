@@ -21,7 +21,7 @@ const ChatBox = () => {
         },
         {
           headers: {
-            Authorization: 'Bearer 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',
+            Authorization: 'Bearer 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',
             'Content-Type': 'application/json',
           },
         }
@@ -44,18 +44,16 @@ const ChatBox = () => {
   return (
     <div className="chat-container">
       <div className="chat-box">
-  {chat.length === 0 ? (
-    <div className="placeholder-text">How may I help you?</div>
-  ) : (
-    chat.map((msg, index) => (
-      <div key={index} className={`message ${msg.sender}`}>
-        <strong>{msg.sender === 'user' ? 'You' : 'Bot'}:</strong>
-        <div className="message-content">{msg.content}</div>
+        {chat.length === 0 && (
+          <div className="placeholder-text">How may I help you?</div>
+        )}
+        {chat.map((msg, index) => (
+          <div key={index} className={`message ${msg.sender}`}>
+            <strong>{msg.sender === 'user' ? 'You' : 'Bot'}:</strong>
+            <div className="message-content">{msg.content}</div>
+          </div>
+        ))}
       </div>
-    ))
-  )}
-</div>
-
 
       <div className="input-area">
         <input
@@ -72,4 +70,3 @@ const ChatBox = () => {
 };
 
 export default ChatBox;
-
