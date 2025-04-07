@@ -66,4 +66,8 @@ const ChatBox = () => {
   );
 };
 
+{messages.length === 0 && (
+  <div className="placeholder-text">How may I help you?</div>
+)}
+
 export default ChatBox;
